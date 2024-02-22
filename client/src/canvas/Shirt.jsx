@@ -20,6 +20,7 @@ const Shirt = () => {
   const stateString = JSON.stringify(snap);
 
   return (
+
     <group key={stateString}>
       <mesh
         castShadow
