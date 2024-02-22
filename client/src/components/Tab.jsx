@@ -8,14 +8,14 @@ const Tab = ({ tab, isFilterTab, isActiveTab, handleClick }) => {
 
   const activeStyles =
     isFilterTab && isActiveTab
-      ? { backgroundcolor: snap.color, opacity: 0.5 }
-      : { backgroundcolor: "transparent", opacity: 1 };
+      ? { backgroundcolor: snap.color, opacity: 1 }
+      : { backgroundcolor: "transparent", opacity: 0.5 };
 
   return (
     <div
       key={tab.name}
       className={`tab-btn ${
-        isFilterTab ? "rounded-full glassmorhism" : "rounded-4"
+        isFilterTab ? "rounded-full glassmorhism bg-gray-400" : "rounded-4"
       }`}
       onClick={handleClick}
       style={activeStyles}
@@ -23,8 +23,10 @@ const Tab = ({ tab, isFilterTab, isActiveTab, handleClick }) => {
       <img
         src={tab.icon}
         alt={tab.name}
-        className={`${isFilterTab ? 'w-2/3 h-2/3' : 'w-11/12 h-11/12 object-contain'}`}
-       />
+        className={`${
+          isFilterTab ? "w-2/3 h-2/3" : "w-11/12 h-11/12 object-contain"
+        }`}
+      />
     </div>
   );
 };
