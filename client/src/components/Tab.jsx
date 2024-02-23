@@ -6,10 +6,12 @@ import state from "../store";
 const Tab = ({ tab, isFilterTab, isActiveTab, handleClick }) => {
   const snap = useSnapshot(state);
 
-  const activeStyles =
-    isFilterTab && isActiveTab
-      ? { backgroundcolor: snap.color, opacity: 1 }
-      : { backgroundcolor: "transparent", opacity: 0.5 };
+  let activeStyles;
+  if (isFilterTab && isActiveTab) {
+    activeStyles = { backgroundColor: snap.color, opacity: 1 };
+  } else {
+    activeStyles = { backgroundColor: "transparent", opacity: 1 };
+  }
 
   return (
     <div
